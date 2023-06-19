@@ -5,5 +5,5 @@ import Schema from '../src/model.mjs';
 
 test("check contrib", () => {
     const result = Schema.safeParse(contrib);
-    assert.ok(result);
+    assert.equal(result.success, true, result.error);
 })
