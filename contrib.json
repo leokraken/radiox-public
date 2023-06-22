@@ -1,8 +1,1 @@
-[
-  {
-    "id": "test-metal",
-    "title": "us rock radio",
-    "signal": "bloodstream",
-    "url": "https://uk1.internet-radio.com/proxy/bloodstream?mp=/live"
-  }
-]
+{"id": "test-metal","title": "us rock radio","signal": "bloodstream","url": "https://uk1.internet-radio.com/proxy/bloodstream?mp=/live"}
