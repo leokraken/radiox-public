@@ -2,7 +2,7 @@ name: Publish data
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, test ]
 
 jobs:
   build:
@@ -22,7 +22,9 @@ jobs:
       - shell: bash
         env: 
           MEILI_TOKEN: ${{ secrets.MEILI_TOKEN }}
+          TEST: ${{ secrets.TEST }}
         run: |
+          echo test secret $TEST
           curl -s -XPUT -H "Content-Type:application/x-ndjson" \
           -H "authorization: Bearer $MEILI_TOKEN" \
           --data-binary "@./contrib.json" \
