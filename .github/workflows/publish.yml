@@ -1,9 +1,7 @@
-name: Schema validation
+name: Publish data
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
 
 jobs:
@@ -21,3 +19,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm test
+      - name: Upload data
+        run: |
+          curl -s -XPUT -H "Content-Type:application/x-ndjson" \
+          -H "authorization: Bearer ${{ vars.MEILI_TOKEN }}" \
+          --data-binary "@./contrib.json" \
+          https://search.granbestiapop.com/indexes/radio/documents
