@@ -22,6 +22,6 @@ jobs:
       - name: Upload data
         run: |
           curl -s -XPUT -H "Content-Type:application/x-ndjson" \
-          -H "authorization: Bearer ${{ vars.MEILI_TOKEN }}" \
+          -H "authorization: Bearer ${{ secrets.MEILI_TOKEN }}" \
           --data-binary "@./contrib.json" \
           https://search.granbestiapop.com/indexes/radio/documents
