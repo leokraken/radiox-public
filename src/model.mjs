@@ -1,13 +1,14 @@
 import z from 'zod';
 
 const maxChars = 40;
+const maxCharsTag = 8;
 const minChars = 2;
 
 const Schema = z.object({
   id: z.string()
     .min(minChars)
     .max(maxChars),
-  title: z.string()
+  name: z.string()
     .min(minChars)
     .max(maxChars),
   signal: z.string()
@@ -17,7 +18,7 @@ const Schema = z.object({
   tags: z.optional(
     z.array(z.string()
       .min(minChars)
-      .max(maxChars)
+      .max(maxCharsTag)
     )
   )
 }).strict();
