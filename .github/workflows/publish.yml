@@ -19,9 +19,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm test
-      - name: Upload data
+      - shell: bash
+        env: 
+          MEILI_TOKEN: ${{ secrets.MEILI_TOKEN }}
         run: |
           curl -s -XPUT -H "Content-Type:application/x-ndjson" \
-          -H "authorization: Bearer ${{ secrets.MEILI_TOKEN }}" \
+          -H "authorization: Bearer $MEILI_TOKEN" \
           --data-binary "@./contrib.json" \
           https://search.granbestiapop.com/indexes/radio/documents
