@@ -1,2 +1,5 @@
 {"id": "test-metal","name": "us rock radio","signal": "bloodstream","url": "https://uk1.internet-radio.com/proxy/bloodstream?mp=/live", "tags":["contrib"]}
 {"id": "classic-metal","name": "Classic Metal Radio","signal": "classic","url": "https://quincy.torontocast.com:2100/stream", "tags":["contrib"]}
+{"id": "sport890","name": "Sport 890","signal": "890 AM","url": "https://alba-uy-sport890-sport890.stream.mediatiquestream.com/tracks-a1/mono.m3u8", "tags":["sport"]}
+
+
